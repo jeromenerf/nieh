@@ -1,0 +1,152 @@
+{
+  'tampabay.com': {
+    'author': '//*[contains(@class, 'item')]/p/a/text()',
+    'body': '//div[@class="entry-content"]',
+    'date': 'substring-after(//*[contains(@class, 'item')]/p/text()[3], 'Posted:')',
+    'title': '//span[@class="entry-title"]',
+},
+  'taz.de': {
+    'author': '//span[@class='author']',
+    'body': '//div[@class='sectbody']',
+    'date': '//div[@class='secthead']',
+    'title': 'concat(//div[@class='sectbody']/h4,': ',//div[@class='sectbody']/h1)',
+},
+  'techcrunch.com': {
+    'author': '//a[@class="name"]
+author: substring-after(//span[@class="single-post-meta-top"],'rsaquo; ')',
+    'body': '//div[contains(@class, 'media-container') or contains(@class, 'body-copy')]
+body: //div[@id="singlentry"]',
+    'date': '//div[@class="post-time"]
+date: substring-before(//div[@class="single-post-meta-top"],' @')',
+    'title': '//h1[@class="headline"]
+title: //a[@class="sh2"]',
+},
+  'techdirt.com': {
+    'author': '//div[@class='details']/p[contains(., 'by ')]/a',
+    'body': '//div[@class='story']',
+    'date': '//p[@class='storydate']',
+    'title': '//div[@class='story']/h1',
+},
+  'technicallyjordan.tumblr.com': {
+    'author': '//meta[@name="author"]/@content',
+    'body': '//div[@class="postBody"]',
+    'date': '//h3',
+    'title': '//h2',
+},
+  'technologyreview.com': {
+    'author': '//ul[@class='byline']/li/a
+author: substring-before(substring-after(//ul[@class='byline']/li, 'By '), ' on')
+author: //div[@class='view-byline']/div[@class='meta']/h2[1]',
+    'body': '//section[contains(@class, 'body')]',
+    'date': 'substring-after(//ul[@class='byline']/li, 'on ')
+date: //div[@class='view-byline']/div[@class='meta']/h2[2]',
+    'title': '//header[@class='article-meta']/h1
+title: substring-before(//title, '|')',
+},
+  'theatlantic.com': {
+    'author': '//div[@id='profile']//*[@class='authors']//a[1]
+author: //*[@class='author']/span',
+    'body': '//div[@class='articleText']
+body: //div[@class='articleContent']
+body: //div[@id='article']',
+    'date': '//*[contains(@class, 'date')]',
+    'title': '//div[@id='article']/h1
+title: //h1',
+},
+  'thedaily.com': {
+    'author': 'substring-after(//span[@class='byline'], "by ")
+author: substring-after(//span[@class='byline'], "By ")
+author: //span[@class='byline']',
+    'body': '//div[@id='content']',
+    'date': '//span[@class='date']',
+    'title': '//div[@class='story_header']/h1',
+},
+  'theglobalmail.org': {
+    'author': '//div[contains(@class, "editorial-byline-author")]/a',
+    'body': '//div[@id="template"]',
+    'date': 'substring-after(//div[contains(@class, "editorial-byline-meta")], " | ")',
+    'title': '//h1[@id="headline"]',
+},
+  'thenation.com': {
+    'author': '//a[contains(@href, '/authors')]
+author: substring-before(//div[@class='print-created'], '|')',
+    'body': '//div[@class='print-content']',
+    'date': '//span[@class='article-date']
+date: substring-after(//div[@class='print-created'], '|')',
+    'title': '//h1[@class='print-title']',
+},
+  'thepioneerwoman.com': {
+    'author': '//p[@class='posted-by']',
+    'body': '//div[@class='post']',
+    'date': '//div[@class='sprite post-date']',
+    'title': '//h1[@class='post-title']',
+},
+  'theregister.co.uk': {
+    'author': '//div[@id="article"]/p[@class="byline"]/a[1]',
+    'body': '//div[@id="article"]/div[@id="body"]',
+    'date': '//div[@id="article"]/p[@class="dateline"]/a[2]',
+    'title': '//div[@id="article"]/h2',
+},
+  'thespoof.com': {
+    'author': '//meta[@name='Author']/@content',
+    'body': '//div[contains(@class, 'KonaBody') or @id='articleimageright']',
+    'date': '//meta[@name='OriginalPublicationDate']/@content',
+    'title': '//h1[contains(@class, 'cTitle')]',
+},
+  'thestreet.com': {
+    'author': '//meta[@name="AUTHOR"]/@content
+author: (//div[@id='print']//div[@id='bd']/h4)[1]',
+    'body': '//div[@class="virtualpage"]
+body: //div[@id='print']//div[@id='bd']',
+    'date': '//meta[@name="DATE"]/@content
+date: //div[@id='print']//div[@id='dte']',
+    'title': '//div[@id='storyHdr']/h1
+title: //div[@id='print']//h2',
+},
+  'theverge.com': {
+    'author': '//p[contains(@class, "byline")]/a[contains(@class, "author")]',
+    'body': '//article[contains(@class, 'feature-entry')]
+body: //article',
+    'date': 'substring-after(normalize-space(//p[contains(@class, "byline")]/span[contains(@class, "publish-date")]), "on ")',
+    'title': '//h1[contains(@class, "headline")]',
+},
+  'tnr.com': {
+    'author': '//div[@class='article_detail']/div[@class='entry_header']/li/div[@class='author']//h3
+author: div[@class='author']//h3',
+    'body': '//div[contains(@class, 'article_detail')]',
+    'date': 'translate(//*[@class='post_date' and contains(., ' 20')], '|', '')',
+    'title': '//div[contains(@class, 'article_detail')]/div[@class='entry_header']/h1
+title: //div[contains(@class, 'article_detail')]//h1
+title: //h1',
+},
+  'tomshardware.com': {
+    'author': '//a[@itemprop = 'author']',
+    'body': '//div[@id = 'intelliTXT']',
+    'date': '//time[@itemprop = 'datePublished']',
+    'title': '//title',
+},
+  'traningslara.se': {
+    'author': '//div[@class="PostHeaderIcons metadata"]/a[@title="Author"]',
+    'body': '//div[@class="Post-body"]',
+    'date': 'substring-before(//div[@class="PostHeaderIcons metadata"], '|')',
+    'title': '//div[@class="Post-body"]//span[@class="PostHeader"]',
+},
+  'tuaw.com': {
+    'author': '//span[@class='author']/a',
+    'body': '//div[@class='body']',
+    'date': '//span[@class='timestamp']',
+    'title': '//h1[@class='posttitle']',
+},
+  'tuckreview.com': {
+    'author': '//div[@class='display-name']',
+    'body': '//div[@class='body']',
+    'date': '//div[@class='date']',
+    'title': '//h1[@class='post-title']',
+},
+  'twitter.com': {
+    'author': '(//strong[contains(@class, 'fullname')])[1]',
+    'body': '(//p[contains(@class, 'js-tweet-text')])[1]',
+    'date': '//span[contains(@class, 'js-short-timestamp')]/@data-time',
+    'title': '//title',
+},
+}
